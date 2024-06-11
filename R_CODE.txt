@@ -1,0 +1,68 @@
+> cancerethnicities
+  European Non.Indigenous.North.American East.Asian
+1    13.70                         15.75      11.30
+2    12.45                         12.45      13.35
+3     5.90                          5.35       4.60
+  South.Asian West.Central.Asian.and.Middle.Eastern
+1        5.15                                   8.1
+2        8.60                                  10.4
+3        6.75                                   7.2
+  African Caribbean Latin..Central.and.South.American
+1    5.60      5.80                              5.75
+2   10.45      9.95                              9.65
+3    6.50      5.35                              5.90
+
+>   View(cancerethnicities)
+> attach(cancerethnicities)
+> summary(cancerethnicities)
+    European      Non.Indigenous.North.American
+ Min.   : 5.900   Min.   : 5.35                
+ 1st Qu.: 9.175   1st Qu.: 8.90                
+ Median :12.450   Median :12.45                
+ Mean   :10.683   Mean   :11.18                
+ 3rd Qu.:13.075   3rd Qu.:14.10                
+ Max.   :13.700   Max.   :15.75                
+   East.Asian     South.Asian   
+ Min.   : 4.60   Min.   :5.150  
+ 1st Qu.: 7.95   1st Qu.:5.950  
+ Median :11.30   Median :6.750  
+ Mean   : 9.75   Mean   :6.833  
+ 3rd Qu.:12.32   3rd Qu.:7.675  
+ Max.   :13.35   Max.   :8.600  
+ West.Central.Asian.and.Middle.Eastern
+ Min.   : 7.200                       
+ 1st Qu.: 7.650                       
+ Median : 8.100                       
+ Mean   : 8.567                       
+ 3rd Qu.: 9.250                       
+ Max.   :10.400                       
+    African         Caribbean    
+ Min.   : 5.600   Min.   :5.350  
+ 1st Qu.: 6.050   1st Qu.:5.575  
+ Median : 6.500   Median :5.800  
+ Mean   : 7.517   Mean   :7.033  
+ 3rd Qu.: 8.475   3rd Qu.:7.875  
+ Max.   :10.450   Max.   :9.950  
+ Latin..Central.and.South.American
+ Min.   :5.750                    
+ 1st Qu.:5.825                    
+ Median :5.900                    
+ Mean   :7.100                    
+ 3rd Qu.:7.775                    
+ Max.   :9.650           
+
+> boxplot(cancerethnicities)
+> y = stack(cancerethnicities)
+> attach(y)
+> bartlett.test(values ~ ind)
+
+	Bartlett test of homogeneity of variances
+
+data:  values by ind
+Bartlett's K-squared = 4.5731, df = 7, p-value =
+0.7119   
+
+> summary(aov(values ~ ind))
+            Df Sum Sq Mean Sq F value Pr(>F)
+ind          7   64.0   9.143   0.809  0.592
+Residuals   16  180.8  11.301               
